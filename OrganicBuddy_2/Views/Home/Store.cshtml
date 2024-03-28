@@ -1,0 +1,225 @@
+﻿
+@{
+    ViewData["Title"] = "Store";
+}
+
+
+<div class="container-xxl store-wrapper home-wrapper-2 py-5">
+    <div class="row">
+        <div class="col-3">
+            <div class="filter-card mb-3">
+                <h3 class="filter-title">Shop By Categories</h3>
+                <div>
+                    <ul class="ps-0">
+                        <li>Vegetables</li>
+                        <li>Fruits</li>
+                        <li>Grains</li>
+                        <li>Beans</li>
+                        <li>Lentils</li>
+                        <li>Flours</li>
+                        <li>Herbs</li>
+                        <li>Dairy Products</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="filter-card mb-3">
+                <h3 class="filter-title">Filter By</h3>
+                <div>
+                    <h5 class="sub-title">Availability</h5>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="" />
+                            <label class="form-check-label" for="">In Stock (1)</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="" />
+                            <label class="form-check-label" for="">Out of Stock (0)</label>
+                        </div>
+                    </div>
+                    <h5 class="sub-title">Price</h5>
+                    <div class="d-flex align-items-center gap-10">
+                        <div class="form-floating">
+                            <input class="form-control" type="text" placeholder="From" aria-label="Small" id="floatingInput" />
+                            <label for="floatingInput">From</label>
+                        </div>
+                        <div class="form-floating">
+                            <input class="form-control" type="text" placeholder="To" id="floatingInput1" />
+                            <label for="floatingInput">To</label>
+                        </div>
+                    </div>
+                    <h5 class="sub-title">Type</h5>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="v1" />
+                            <label class="form-check-label" for="">Leafy Greens</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="v2" />
+                            <label class="form-check-label" for="">Cruciferous Vegetables</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="v3" />
+                            <label class="form-check-label" for="">Root Vegetables</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="v4" />
+                            <label class="form-check-label" for="">Allium Vegetables</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="v5" />
+                            <label class="form-check-label" for="">Gourds and Squashes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="v6" />
+                            <label class="form-check-label" for="">Tubers</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="v7" />
+                            <label class="form-check-label" for="">Nightshade Vegetables</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="v8" />
+                            <label class="form-check-label" for="">Cucurbitaceous Vegetables</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-card mb-3">
+                <h3 class="filter-title">Product Tags</h3>
+                <div>
+                    <div class="product-tags d-flex flex-wrap align-items-center gap-10">
+                        <span class="badge bg-light text-secondary rounded-3 py-2 px-3">Fruits</span>
+                        <span class="badge bg-light text-secondary rounded-3 py-2 px-3">Vegetables</span>
+                        <span class="badge bg-light text-secondary rounded-3 py-2 px-3">Beans</span>
+                        <span class="badge bg-light text-secondary rounded-3 py-2 px-3">Herbs</span>
+                        <span class="badge bg-light text-secondary rounded-3 py-2 px-3">Grains</span>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-card mb-3">
+                <h3 class="filter-title">Random Product</h3>
+                <div>
+                    <div class="random-products mb-3 d-flex">
+                        <div class="w-50">
+                            <img src="../images/fruit/apple.jpg" alt="product" class="img-fluid" />
+                        </div>
+                        <div class="w-50">
+                            <h5> Headings must have content and the content must be accessible</h5>
+                            <b>₹200</b>
+                        </div>
+                    </div>
+                    <div class="random-products d-flex">
+                        <div class="w-50">
+                            <img src="../images/fruit/apple.jpg" alt="product" class="img-fluid " />
+                        </div>
+                        <div class="w-50">
+                            <h5> Headings must have content and the content must be accessible</h5>
+                            <b>₹200</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="filter-sort-grid">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-10">
+                        <p class="mb-0 d-block" style="width:100px">Sort By: </p>
+                        <select name="" class="form-control form-select" id="">
+                            <option value="best-selling">Best selling</option>
+                            <option value="title-ascending">Alphabetically, A-Z</option>
+                            <option value="title-descending">Alphabetically, Z-A</option>
+                            <option value="price-ascending">Price, low to high</option>
+                            <option value="price-descending">Price, high to low</option>
+                            <option value="created-ascending">Date, old to new</option>
+                            <option value="created-descending">Date, new to old</option>
+                        </select>
+                    </div>
+                    <div class="d-flex align-items-center gap-10">
+                        <p class="totalproducts mb-0">21 Products</p>
+                        <div class="d-flex gap-10 align-items-center grid">
+                            <img onclick="{()=>{setGrid(3);}}" src="../images/gr4.svg" class="d-block img-fluid" alt="grid" />
+                            <img onclick="{()=>{setGrid(4);}}" src="../images/gr3.svg" class="d-block img-fluid" alt="grid" />
+                            <img onclick="{()=>{setGrid(6);}}" src="../images/gr2.svg" class="d-block img-fluid" alt="grid" />
+                            <img onclick="{()=>{setGrid(12);}}" src="../images/gr.svg" class="d-block img-fluid" alt="grid" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-list pb-5">
+                <div class="d-flex gap-10 flex-wrap pt-2">
+                    <div class="product-card">
+                        <div class='wishlist-icon position-relative'>
+                            <div class='action-bar position-absolute'>
+                                <div class='d-flex flex-column'>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/wish.svg' alt='wishlist' />
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/prodcompare.svg' alt='compare' />
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
+                                            <img src='~/images/view.svg' alt='view' />
+                                        </a>
+                                       
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/add-cart.svg' alt='addcart' />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                        <div class='product-image'>
+                            <img height="214px" src='~/images/fruit/apple.jpg' alt='product' />
+                        </div>
+                        <div class='product-details'>
+                            <h6 class='name'>Blackberry</h6>
+                            <h5 class='description'>Parsing error: Expected JSX closing tag for</h5>
+                            @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
+                            <p class='price'>₹100</p>
+                    
+                        </div>
+                        </div>
+                    </div>
+                    <div class="product-card ">
+                        <div class='wishlist-icon position-relative'>
+                            <div class='action-bar position-absolute'>
+                                <div class='d-flex flex-column'>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/wish.svg' alt='wishlist' />
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/prodcompare.svg' alt='compare' />
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
+                                            <img src='~/images/view.svg' alt='view' />
+                                        </a>
+                                        <img src='~/images/view.svg' alt='view' />
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/add-cart.svg' alt='addcart' />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row">
+                            <div class='product-image '>
+                                <img height="214px" width="250px" src='~/images/fruit/apricot.png' alt='product' />
+                            </div>
+                            <div class='product-details'>
+                                <h6 class='name'>Blackberry</h6>
+                                <h5 class='description'>Parsing error: Expected JSX closing tag for</h5>
+                                @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
+                                <p class='price'>₹100</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

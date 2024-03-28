@@ -1,0 +1,230 @@
+﻿
+@{
+    ViewData["Title"] = "SingleProduct";
+}
+
+<div class="container-xxl main-product-wrapper py-5 home-wrapper-2">
+    <div class="row">
+        <div class="col-6">
+            <div class="main-product-image">
+                <div>
+                    <img src="../images/fruit/apple.jpg" alt="product" />
+                </div>
+            </div>
+            <div class="main-product-details">
+                <div class="d-flex align-items-center flex-row gap-15 pb-3">
+                    <h3 class="product-heading">Quantity(In Kg) :</h3>
+                    <div class="num">
+                        <input type="number" name="" min="1" max="20" class="form-control" style="width: 70px; height: 30px" id="" />
+                    </div>
+                    <div class="d-flex align-items-center gap-30 ms-5">
+                        <button class="button border-0" type="submit">Add to Cart</button>
+                        <button class="button signup">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="main-product-details">
+                <div class="border-bottom">
+                    <h3 class="title">
+                        Farmers can list their organic products,
+                        fostering direct relationships with consumers.
+                    </h3>
+                </div>
+                <div class="border-bottom py-3">
+                    <p class="price">₹200</p>
+                    <div class="d-flex align-items-center gap-10">
+                        <!-- ReactStars -->
+                        <span class="fs-5 text-warning">&#9733;</span>
+                        <span class="fs-5 text-warning">&#9733;</span>
+                        <span class="fs-5 text-warning">&#9733;</span>
+                        <span class="fs-5 text-warning">&#9733;</span>
+                        <span class="fs-5 text-secondary">&#9733;</span>
+                        <p class="mb-0 t-review">( 2 Reviews )</p>
+                    </div>
+                    <a class="review-btn" href="#review">Write a Review</a>
+                </div>
+                <div class="py-3">
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Type :</h3>
+                        <p class="product-data">Tubers</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Name :</h3>
+                        <p class="product-data">Apple</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Category :</h3>
+                        <p class="product-data">Fruit</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Tags :</h3>
+                        <p class="product-data">Apple</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Availability :</h3>
+                        <p class="product-data">In Stock</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Variety :</h3>
+                        <p class="product-data">Granny Smith</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Nutritions :</h3>
+                        <p class="product-data">Vitamin A , C</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Shipping And Returns :</h3>
+                        <p class="product-data">Free Shipping & Returns over ₹500 in <b>5-10 business days</b></p>
+                    </div>
+                    <div class="d-flex align-items-center gap-10 my-2">
+                        <h3 class="product-heading">Copy Product Link :</h3>
+                        
+                    </div>
+                    <div class="d-flex align-items-center gap-15 pb-1">
+						<div>
+                            <img src='~/images/prodcompare.svg' alt='compare' />
+                            <a href=""> Add to Compare</a>
+                        </div>
+						<div>
+                            <img src='~/images/wish.svg' alt='wishlist' />
+                            <a href="">Add to WishList</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-xxl description-wrapper py-5 home-wrapper-2">
+    <div class="row">
+        <div class="col-12">
+            <h4>Description</h4>
+            <div class="bg-white p-3">
+                <p>
+                    Welcome to Organic buddy, a pioneering platform connecting farmers directly with consumers,revolutionizing the way we access fresh, organic produce.Say goodbye to middlemen - our platform empower farmers to showcase their harvests, allowing you to discover and purchase the finest, locally sourced products.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-xxl reviews-wrapper home-wrapper-2">
+    <div class="row">
+        <div class="col-12">
+            <h3 id="review">Reviews</h3>
+            <div class="review-inner-wrapper">
+                <div class="review-inner-wrapper">
+                    <div class="review-head d-flex justify-content-between align-items-end">
+                        <div>
+                            <h4 class="mb-2">Customer Reviews</h4>
+                            <div class="d-flex align-items-center gap-10">
+                                
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-secondary">&#9733;</span>
+                                <p class="mb-0">Based on 2 Reviews</p>
+                            </div>
+                        </div>
+                        <div>
+                                <a class="text-dark text-decoration-underline" href="">Write a Review</a>
+                        </div>
+                        
+                    </div>
+                    <div class="review-form py-4">
+                        <h4>Write a Review</h4>
+                        <form action="" class="d-flex flex-column gap-15">
+                            <div>
+                                
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                            </div>
+                            <div>
+                                <textarea class="w-100 form-control" name="" id="" cols="30" rows="4" placeholder="Comments"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button class="button border-0">Submit Review</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="reviews mt-4">
+                        <div class="review">
+                            <div class="d-flex gap-10 align-items-center">
+                                <h6 class="mb-0">Meera</h6>
+                                
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-warning">&#9733;</span>
+                                <span class="fs-5 text-secondary">&#9733;</span>
+                            </div>
+                            <p class="mt-3">
+                                Feel free to mix and match or modify these suggestions based on your preferences.
+                                Check the availability of the domain names to ensure they align with your branding.
+                                If you have specific themes or elements you'd like to include, let me know for
+                                more personalized suggestions!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-xxl winter-wrapper py-5 home-wrapper-2">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="section-heading">Winter Special</h3>
+        </div>
+       <div class="container-xxl">
+           <div class="row">
+                <div class="col-3">
+                    <div class="product-card">
+                        <div class='wishlist-icon position-relative'>
+
+                            <div class='action-bar position-absolute'>
+
+                                <div class='d-flex flex-column'>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/wish.svg' alt='wishlist' />
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/prodcompare.svg' alt='compare' />
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
+                                            <img src='~/images/view.svg' alt='view' />
+                                        </a>
+                                    </button>
+                                    <button class='border-0 bg-transparent'>
+                                        <img src='~/images/add-cart.svg' alt='addcart' />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='product-image'>
+                            <img height="214px" src='~/images/fruit/apple.jpg' alt='product' />
+                        </div>
+                        <div class='product-details'>
+                            <h6 class='name'>Blackberry</h6>
+                            <h5 class='description'>Parsing error: Expected JSX closing tag for</h5>
+                            @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
+                            <p class='price'>₹100</p>
+                        </div>
+
+                    </div>
+                </div>
+           </div>
+       </div>
+    </div>
+</div>

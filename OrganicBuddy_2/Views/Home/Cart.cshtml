@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<div class='container-xxl cart-wrapper home-wrapper-2 py-5'>
+    <div class='row'>
+        <div class='col-12'>
+            <div class='cart-header py-3 d-flex justify-content-between align-items-center'>
+                <h4 class='cart-col-1'>Product</h4>
+                <h4 class='cart-col-2'>Price</h4>
+                <h4 class='cart-col-3'>Quantity(In Kg)</h4>
+                <h4 class='cart-col-4'>Total</h4>
+            </div>
+
+            <div class='cart-data py-3 mb-2 d-flex justify-content-between align-items-center'>
+                <div class='cart-col-1 gap-15 d-flex align-items-center'>
+                    <div class='w-25'>
+                        <img class='img-fluid' src="~/images/fruit/kiwi.jpg" alt='product img' />
+                    </div>
+                    <div class='w-75'>
+                        <p>Kiwi</p>
+                        <p>Variety : ABCD</p>
+                        <p>Type : ABCD</p>
+                    </div>
+                </div>
+                <div class='cart-col-2'>
+                    <h5 class='price'>₹200</h5>
+                </div>
+                <div class='cart-col-3 d-flex align-items-center gap-10'>
+                    <div>
+                        <input class='form-control' type='number' min='1' max='20' style='width:70px' name='' id='' />
+                    </div>
+                    <button class='del'>
+                        <img src='@Url.Content("~/images/del.svg")' alt='delete' class='position-relative ' />
+                    </button>
+                </div>
+                <div class='cart-col-4'>
+                    <h5 class='price'>₹200</h5>
+                </div>
+            </div>
+
+            <div class='cart-data py-3 mb-2 d-flex justify-content-between align-items-center'>
+                <div class='cart-col-1 gap-15 d-flex align-items-center'>
+                    <div class='w-25'>
+                        <img class='img-fluid' src="~/images/fruit/mango.jpg" alt='product img' />
+                    </div>
+                    <div class='w-75'>
+                        <p>Mango</p>
+                        <p>Variety : ABCD</p>
+                        <p>Type : ABCD</p>
+                    </div>
+                </div>
+                <div class='cart-col-2'>
+                    <h5 class='price'>₹200</h5>
+                </div>
+                <div class='cart-col-3 d-flex align-items-center gap-10'>
+                    <div>
+                        <input class='form-control' type='number' min='1' max='20' style='width:70px' name='' id='' />
+                    </div>
+                    <button class='del'>
+                        <img src='@Url.Content("~/images/del.svg")' alt='delete' class='position-relative ' />
+                    </button>
+                </div>
+                <div class='cart-col-4'>
+                    <h5 class='price'>₹200</h5>
+                </div>
+            </div>
+
+        </div>
+
+        <div class='col-12 py-2 mt-4'>
+            <div class='d-flex justify-content-between align-items-baseline'>
+                <a class='button' asp-action="CheckOut" asp-controller="Home">Continue Shopping</a>
+                <div class='d-flex flex-column align-items-end'>
+                    <h4>SubTotal : ₹400</h4>
+                    <p>Shipping Calculated at checkout</p>
+                    <a class='button' asp-action="CheckOut" asp-controller="Home">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

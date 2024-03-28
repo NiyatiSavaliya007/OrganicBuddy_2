@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OrganicBuddy_2</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OrganicBuddy_2.styles.css" asp-append-version="true" />
+	<link href="~/css/app.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="header-top-strip py-3">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-6">
+                    <p class="text-white mb-0">Free Shipping over ₹500 & Free Returns</p>
+                </div>
+                <div class="col-6">
+                    <p class="text-end text-white mb-0">
+                        Hotline: <a class="text-white" href="tel:+91 8140114045">+91 8140114045</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="header-upper py-3">
+        <div class="container-xxl">
+            <div class="row align-items-center">
+                <div class="col-2">
+                    <h3>
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">OrganicBuddy</a>
+                    </h3>
+                </div>
+                <div class="col-5">
+                    <form method="get" asp-action="Index">
+                    <div class="input-group">
+                            <input type="search" class="form-control py-2" placeholder="Search Product Here..." aria-label="Search Product Here..." value="@ViewData["Getdetails"]" name="search" aria-describedby="basic-addon2" />
+                        <span class="input-group-text p-3" id="basic-addon2"><i class="bi bi-search fs-6"></i></span>
+                    </div>
+                    </form>
+                </div>
+                <div class="col-5">
+                    <div class="header-upper-links d-flex align-items-center justify-content-between">
+                        <div>
+                            <a href="@Url.Action("CompareProduct", "Home")" class="d-flex align-items-center gap-10 text-white">
+                                <img src="~/images/compare.svg" alt="compare" />
+                                <p class="mb-0">
+                                    Compare <br />Products
+                                </p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="@Url.Action("Wishlist", "Home")" class="d-flex align-items-center gap-10 text-white">
+                                <img src="~/images/wishlist.svg" alt="wishlist" />
+                                <p class="mb-0">
+                                    Favourite <br />Products
+                                </p>
+                            </a>
+                        </div>
+                        <div>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <!-- Display user's name -->
+                                <div>
+                                    <p class="text-white mb-0">
+                                        Welcome, @User.Identity.Name
+                                    </p>
+                                </div>
+                            }
+                            else
+                            {
+                                <!-- Display login link if user is not authenticated -->
+                                <div>
+                                    <a href="@Url.Action("Login", "Home")" class="d-flex align-items-center gap-10 text-white">
+                                        <img src="~/images/user.svg" alt="user" />
+                                        <p class="mb-0">
+                                            Log In<br /> My Account
+                                        </p>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <div>
+                            <a href="@Url.Action("Cart", "Home")" class="d-flex align-items-center gap-10 text-white">
+                                <img src="~/images/cart.svg" alt="cart" />
+                                <div class="d-flex flex-column gap-10">
+                                    <span class="badge bg-white text-dark">0</span>
+                                    <p class="mb-0">₹ 500</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="header-bottom py-3">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-12">
+                    <div class="menu-bottom d-flex align-items-center gap-30">
+                        <div>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle bg-transparent border-0 gap-15 d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="~/images/menu.svg" alt="" />
+                                    <span class="me-5 d-inline-block">Shop Categories</span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                                    <li><a class="dropdown-item text-white" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="menu-links">
+                            <div class="d-flex align-items-center gap-15">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Store">Our Store</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Blogs">Blogs</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <footer class="py-4">
+        <div class="container-xxl">
+            <div class="row align-items-center">
+                <div class="col-5">
+                    <div class="footer-top-data d-flex gap-30 align-items-center">
+                        <img src="~/images/newsletter.png" alt="newsletter" />
+                        <h2 class="mb-0 text-white">Sign Up for Newsletter</h2>
+                    </div>
+                </div>
+                <div class="col-7">
+                    <div class="input-group">
+                        <input type="text" class="form-control py-1" placeholder="Your Email Address" aria-label="Your Email Address" aria-describedby="basic-addon2" />
+                        <span class="input-group-text p-2" id="basic-addon2">Subscribe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="py-4">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-4">
+                    <h4 class="text-white mb-4">Contact Us</h4>
+                    <div>
+                        <address class="text-white fs-6">
+                            Besides Amrut Institute, <br />Toraniya, Junagadh <br />
+                            PinCode: 362263
+                        </address>
+                        <a href="tel:+91 8140114045" class="mt-3 d-block mb-1 text-white">
+                            +91 8140114045
+                        </a>
+                        <a href="mailto:niyatisavaliya89@gmail.com" class="mt-2 d-block mb-0 text-white">
+                            niyatisavaliya89@gmail.com
+                        </a>
+                        <div class="social icons d-flex align-items-center gap-30 mt-4">
+                            <a class="text-white" href="#">
+                                <FaLinkedin class="fs-4" />
+                            </a>
+                            <a class="text-white" href="#">
+                                <FaInstagram class="fs-4" />
+                            </a>
+                            <a class="text-white" href="#">
+                                <FaGithub class="fs-4" />
+                            </a>
+                            <a class="text-white" href="#">
+                                <FaYoutube class="fs-4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <h4 class="text-white mb-4">Information</h4>
+                    <div class="footer-links text-white d-flex flex-column">
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Refund">Refund Policy</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Shipping">Shipping Policy</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="TaC">Terms & Conditions</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <h4 class="text-white mb-4">Account</h4>
+                    <div class="footer-links text-white d-flex flex-column">
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">About Us</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Faq</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Contact</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Blogs</a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <div class="footer-links text-white d-flex flex-column ">
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Fruits</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Vegetables</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Grains</a> 
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Beans</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Herbs</a>
+                        <a class="text-white py-2 mb-1" asp-area="" asp-controller="Home" asp-action="Index">Dairy Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer class="py-4">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-center mb-0 text-white">&copy; @DateTime.Now.Year, Powered by Organic Buddies</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
