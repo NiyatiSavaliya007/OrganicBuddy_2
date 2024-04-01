@@ -3,147 +3,79 @@
     ViewData["Title"] = "CompareProduct";
 }
 
-<div class="container-xxl compare-product-wrapper py-5 home-wrapper-2">
+<div class="container-xxl bg-color">
     <div class="row">
-        <div class="col-3">
-            <div class="compare-product-card position-relative">
-                <img  src="../images/cross.svg" alt="cross" class="position-absolute cross img-fluid" />
-                <div class="product-card-image">
-                    <img height="214px" width="250px" src="../images/fruit/apple.jpg" alt="product" />
-                </div>
-                <div class="compare-product-details">
-                    <h5 class="title">Crisp and Juicy Elegance: The Apple's Exquisite Tale</h5>
-                    <h6 class="price mb-3">₹300</h6>
-                    <div>
-                        <div class="product-detail">
-                            <h5>Name :</h5>
-                            <p>Apple</p>
+        <div class="container-xxl">
+            <div class="row">
+                @if (Model.Count > 0)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-3">
+                            <div class="container-xxl">
+                                <div class="product-card">
+                                    @* <div class='wishlist-icon position-relative'>
+
+                                        <div class='action-bar position-absolute'>
+
+                                            <div class='d-flex flex-column'>
+                                                <button class='border-0 bg-transparent'>
+                                                    <img src='~/images/wish.svg' alt='wishlist' />
+                                                </button>
+                                                <button class='border-0 bg-transparent'>
+                                                    <img src='~/images/prodcompare.svg' alt='compare' />
+                                                </button>
+                                                <button class='border-0 bg-transparent'>
+                                                    <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
+                                                        <img src='~/images/view.svg' alt='view' />
+                                                    </a>
+                                                </button>
+                                                <button class='border-0 bg-transparent'>
+                                                    <img src='~/images/add-cart.svg' alt='addcart' />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div> *@
+                                    <div class='product-image'>
+                                        <img height="214px" src='~/images/fruit/apple.jpg' alt='product' />
+                                    </div>
+                                    <div class='product-details'>
+                                        <div class='compare-product-details'>
+                                            <div class="product-details">
+                                                <h5>Name:  @item.Name</h5>
+                                              <p></p>
+                                            </div>
+                                            <div class="product-details">
+                                                <h5>Type:  @item.Type</h5>
+                                                <p></p>
+                                            </div>
+                                            <div class="product-details">
+                                                <h5>Availability :  In Stock</h5>
+                                                <p></p>
+                                            </div>
+                                            <div class="product-details">
+                                                <h5>Variety :  @item.Variety</h5>
+                                                <p></p>
+                                            </div>
+                                            <div class="product-details">
+                                                <h5>Price:  ₹@item.Price</h5>
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-detail">
-                            <h5>Type :</h5>
-                            <p>Tubers</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Availability :</h5>
-                            <p>In Stock</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Variety :</h5>
-                            <p>Granny Smith</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Nutrition :</h5>
-                            <p>Vitamin A , C</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="compare-product-card position-relative">
-                <img src="../images/cross.svg" alt="cross" class="position-absolute cross img-fluid" />
-                <div class="product-card-image">
-                    <img height="214px" width="250px" src="../images/fruit/cranberry.jpg" alt="product" />
-                </div>
-                <div class="compare-product-details">
-                    <h5 class="title">Crisp and Juicy Elegance: The Cranberry's Exquisite Tale</h5>
-                    <h6 class="price mb-3">₹300</h6>
-                    <div>
-                        <div class="product-detail">
-                            <h5>Name :</h5>
-                            <p>Cranberry</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Type :</h5>
-                            <p>Tubers</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Availability :</h5>
-                            <p>In Stock</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Variety :</h5>
-                            <p>Granny Smith</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Nutrition :</h5>
-                            <p>Vitamin A , C</p>
-                        </div>
-                    </div>
-                </div>
+                    }
+                }
+                else
+                {
+                    <p>No items in the cart.</p>
+                }
             </div>
         </div>
 
-        <div class="col-3">
-            <div class="compare-product-card position-relative">
-                <img src="../images/cross.svg" alt="cross" class="position-absolute cross img-fluid" />
-                <div class="product-card-image">
-                    <img height="214px" width="250px" src="../images/fruit/fig.jpg" alt="product" />
-                </div>
-                <div class="compare-product-details">
-                    <h5 class="title">Crisp and Juicy Elegance: The Fig's Exquisite Tale</h5>
-                    <h6 class="price mb-3">₹300</h6>
-                    <div>
-                        <div class="product-detail">
-                            <h5>Name :</h5>
-                            <p>Fig</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Type :</h5>
-                            <p>Tubers</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Availability :</h5>
-                            <p>In Stock</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Variety :</h5>
-                            <p>Granny Smith</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Nutrition :</h5>
-                            <p>Vitamin A , C</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-3">
-            <div class="compare-product-card position-relative">
-                <img src="../images/cross.svg" alt="cross" class="position-absolute cross img-fluid" />
-                <div class="product-card-image">
-                    <img height="214px" width="250px" src="../images/fruit/grapefruit.jpg" alt="product" />
-                </div>
-                <div class="compare-product-details">
-                    <h5 class="title">Crisp and Juicy Elegance: The Grapefruit's Exquisite Tale</h5>
-                    <h6 class="price mb-3">₹300</h6>
-                    <div>
-                        <div class="product-detail">
-                            <h5>Name :</h5>
-                            <p>Grapefruit</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Type :</h5>
-                            <p>Tubers</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Availability :</h5>
-                            <p>In Stock</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Variety :</h5>
-                            <p>Granny Smith</p>
-                        </div>
-                        <div class="product-detail">
-                            <h5>Nutrition :</h5>
-                            <p>Vitamin A , C</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
+
     </div>
 </div>
-
 

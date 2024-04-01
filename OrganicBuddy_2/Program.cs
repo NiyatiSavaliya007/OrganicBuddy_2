@@ -36,21 +36,21 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// Login endpoint
-app.MapPost("/Home/Login", async (OBAppDbContext dbContext, string email, string password) =>
-{
-    var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
+//// Login endpoint
+//app.MapPost("/Home/Login", async (OBAppDbContext dbContext, string email, string password) =>
+//{
+//    var user = await dbContext.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
 
-    if (user != null)
-    {
-        // Authentication successful, redirect to home page
-        return Results.Redirect("/Home/Index");
-    }
-    else
-    {
-        // Authentication failed, redirect back to login page with error message
-        return Results.Redirect("/Home/Login?error=Invalid credentials");
-    }
-});
+//    if (user != null)
+//    {
+//        // Authentication successful, redirect to home page
+//        return Results.Redirect("/Home/Index");
+//    }
+//    else
+//    {
+//        // Authentication failed, redirect back to login page with error message
+//        return Results.Redirect("/Home/Login?error=Invalid credentials");
+//    }
+//});
 
 app.Run();

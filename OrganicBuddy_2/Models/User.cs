@@ -24,6 +24,7 @@ namespace OrganicBuddy_2.Models
         public string Password { get; set; }
 
         public string Address { get; set; }
+       
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;

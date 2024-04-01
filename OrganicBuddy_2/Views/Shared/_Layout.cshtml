@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/OrganicBuddy_2.styles.css" asp-append-version="true" />
 	<link href="~/css/app.css" rel="stylesheet" />
+	<script src="~/js/search.js"></script>
+
 </head>
 <body>
 
@@ -15,7 +17,7 @@
         <div class="container-xxl">
             <div class="row">
                 <div class="col-6">
-                    <p class="text-white mb-0">Free Shipping over ₹500 & Free Returns</p>
+                    <p class="text-white mb-0"></p>
                 </div>
                 <div class="col-6">
                     <p class="text-end text-white mb-0">
@@ -35,11 +37,11 @@
                     </h3>
                 </div>
                 <div class="col-5">
-                    <form method="get" asp-action="Index">
-                    <div class="input-group">
-                            <input type="search" class="form-control py-2" placeholder="Search Product Here..." aria-label="Search Product Here..." value="@ViewData["Getdetails"]" name="search" aria-describedby="basic-addon2" />
-                        <span class="input-group-text p-3" id="basic-addon2"><i class="bi bi-search fs-6"></i></span>
-                    </div>
+                    <form method="get" asp-controller="Home" asp-action="Search" class="search-form">
+                        <div class="input-group">
+                            <input type="search" class="form-control py-2" name="query" placeholder="Search Product Here..." aria-label="Search Product Here..." aria-describedby="basic-addon2" />
+                            <button type="submit" class="input-group-text p-3" id="srcMenu">Search</button>
+                        </div>
                     </form>
                 </div>
                 <div class="col-5">
@@ -60,29 +62,7 @@
                                 </p>
                             </a>
                         </div>
-                        <div>
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                <!-- Display user's name -->
-                                <div>
-                                    <p class="text-white mb-0">
-                                        Welcome, @User.Identity.Name
-                                    </p>
-                                </div>
-                            }
-                            else
-                            {
-                                <!-- Display login link if user is not authenticated -->
-                                <div>
-                                    <a href="@Url.Action("Login", "Home")" class="d-flex align-items-center gap-10 text-white">
-                                        <img src="~/images/user.svg" alt="user" />
-                                        <p class="mb-0">
-                                            Log In<br /> My Account
-                                        </p>
-                                    </a>
-                                </div>
-                            }
-                        </div>
+                        
                         <div>
                             <a href="@Url.Action("Cart", "Home")" class="d-flex align-items-center gap-10 text-white">
                                 <img src="~/images/cart.svg" alt="cart" />
@@ -92,6 +72,15 @@
                                 </div>
                             </a>
                         </div>
+                        <div>
+                            <a href="@Url.Action("Login", "Home")" class="d-flex align-items-center gap-10 text-white">
+                                <img src="~/images/user.svg" alt="cart" />
+                                    <p class="mb-0">
+                                        Login <br />Sign Up
+                                    </p>
+                            </a>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

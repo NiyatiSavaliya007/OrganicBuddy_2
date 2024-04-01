@@ -1,0 +1,52 @@
+﻿@model List<OrganicBuddy_2.Models.Pro>
+
+@if (Model != null && Model.Any())
+{
+    <h2>Search Results</h2>
+    <ul>
+        @foreach (var Product in Model)
+        {
+
+            <div class="product-card">
+                <div class='wishlist-icon position-relative'>
+                    <div class='action-bar position-absolute'>
+                        <div class='d-flex flex-column'>
+                            <button class='border-0 bg-transparent'>
+                                <img src='~/images/wish.svg' alt='wishlist' />
+                            </button>
+                            <button class='border-0 bg-transparent'>
+                                <img src='~/images/prodcompare.svg' alt='compare' />
+                            </button>
+                            <button class='border-0 bg-transparent'>
+                                <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
+                                    <img src='~/images/view.svg' alt='view' />
+                                </a>
+
+                            </button>
+                            <button class='border-0 bg-transparent'>
+                                <img src='~/images/add-cart.svg' alt='addcart' />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row">
+                    <div class='product-image'>
+                        <img height="214px" src='~/images/fruit/apple.jpg' alt='product' />
+                    </div>
+                    <div class='product-details'>
+                        <h6 class='name'>@Product.Name</h6>
+                        <h5 class='description'>@Product.Description</h5>
+                        @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
+                        <p class='price'>₹@Product.Price</p>
+                        <p>Quantity : @Product.Quantity</p>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </ul>
+}
+else
+{
+    <p>No matching products found.</p>
+}

@@ -23,48 +23,84 @@ namespace OrganicBuddy_2.Controllers
        
         public  IActionResult Index(string search)
         {
-            // Initialize the services list
-            var services = new List<Service>
+            var cartItems = _db.Products.ToList();
+            return View(cartItems);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Index(int id)
         {
-            new Service
+            var product = await _db.Products.FindAsync(id);
+
+            if (product == null)
             {
-                Image = "images/service.png",
-                Title = "Free Shipping",
-                Tagline = "From all orders over ₹500"
-            },
-            new Service
-            {
-                Image = "images/service-02.png",
-                Title = "Daily Surprise Offers",
-                Tagline = "Save upto 25% off"
-            },
-            new Service
-            {
-                Image = "images/service-03.png",
-                Title = "Support 24/7",
-                Tagline = "Shop with an expert"
-            },
-            new Service
-            {
-                Image = "images/service-04.png",
-                Title = "Affordable Prices",
-                Tagline = "Get Farm Default Price"
-            },
-            new Service
-            {
-                Image = "images/service-05.png",
-                Title = "Secure Payments",
-                Tagline = "100% Protected Payment"
+                return NotFound();
             }
-        };
-           
-            return View(services);
+
+            var cartItem = new Pro
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+
+            };
+
+            // Check if the entity is already tracked, and if not, add it
+            var existingCartItem = await _db.Products.FindAsync(cartItem.Id);
+            if (existingCartItem == null)
+            {
+                _db.Products.Add(cartItem);
+            }
+            else
+            {
+                // Update the existing tracked entity with the new values
+                _db.Entry(existingCartItem).CurrentValues.SetValues(cartItem);
+            }
+
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("ComparePage");
         }
 
-        
+
+
         public IActionResult Store()
         {
-            return View();
+            var cartItems = _db.Products.ToList();
+            return View(cartItems);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Store(int id)
+        {
+            var product = await _db.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            var cartItem = new Pro
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+
+            };
+
+            // Check if the entity is already tracked, and if not, add it
+            var existingCartItem = await _db.Products.FindAsync(cartItem.Id);
+            if (existingCartItem == null)
+            {
+                _db.Products.Add(cartItem);
+            }
+            else
+            {
+                // Update the existing tracked entity with the new values
+                _db.Entry(existingCartItem).CurrentValues.SetValues(cartItem);
+            }
+
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("ComparePage");
         }
         public IActionResult Contact()
         {
@@ -82,16 +118,123 @@ namespace OrganicBuddy_2.Controllers
 		}
         public IActionResult CompareProduct()
         {
-            return View();
+            var cartItems = _db.Products.ToList();
+            return View(cartItems);
+        }
+        [HttpPost]
+        public async Task<IActionResult> CompareProduct(int id)
+        {
+            var product = await _db.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            var cartItem = new Pro
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+
+            };
+
+            // Check if the entity is already tracked, and if not, add it
+            var existingCartItem = await _db.Products.FindAsync(cartItem.Id);
+            if (existingCartItem == null)
+            {
+                _db.Products.Add(cartItem);
+            }
+            else
+            {
+                // Update the existing tracked entity with the new values
+                _db.Entry(existingCartItem).CurrentValues.SetValues(cartItem);
+            }
+
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("ComparePage");
         }
         public IActionResult Wishlist()
         {
-            return View();
+            var cartItems = _db.Products.ToList();
+            return View(cartItems);
+        }
+        [HttpPost]
+        public async Task<IActionResult> WishList(int id)
+        {
+            var product = await _db.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            var cartItem = new Pro
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+
+            };
+
+            // Check if the entity is already tracked, and if not, add it
+            var existingCartItem = await _db.Products.FindAsync(cartItem.Id);
+            if (existingCartItem == null)
+            {
+                _db.Products.Add(cartItem);
+            }
+            else
+            {
+                // Update the existing tracked entity with the new values
+                _db.Entry(existingCartItem).CurrentValues.SetValues(cartItem);
+            }
+
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("ComparePage");
         }
         public IActionResult Cart()
         {
-            return View();
+            var cartItems = _db.Products.ToList();
+            return View(cartItems);
+            
         }
+        [HttpPost]
+        public async Task<IActionResult> Cart(int id)
+        {
+            var product = await _db.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            var cartItem = new Pro
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+
+            };
+
+            // Check if the entity is already tracked, and if not, add it
+            var existingCartItem = await _db.Products.FindAsync(cartItem.Id);
+            if (existingCartItem == null)
+            {
+                _db.Products.Add(cartItem);
+            }
+            else
+            {
+                // Update the existing tracked entity with the new values
+                _db.Entry(existingCartItem).CurrentValues.SetValues(cartItem);
+            }
+
+            await _db.SaveChangesAsync();
+
+            return RedirectToAction("CartPage");
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -126,6 +269,7 @@ namespace OrganicBuddy_2.Controllers
                 if (user != null)
                 {
                     // Authentication successful, redirect to home page
+                    
                     return RedirectToAction("Index");
                 }
                 else
@@ -136,10 +280,27 @@ namespace OrganicBuddy_2.Controllers
             }
 
             // If model state is not valid or authentication failed, return to login view
+            
             return View();
         }
 
+        public async Task<IActionResult> Search(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                // Handle empty search query
+                // For example, redirect to the homepage
+                return RedirectToAction("Index");
+            }
 
+            // Query the database for products matching the search query
+            var matchingProducts = await _db.Products
+                .Where(p => EF.Functions.Like(p.Name, $"%{query}%"))
+                .ToListAsync();
+
+            // Pass the search results to the view
+            return View(matchingProducts);
+        }
 
 
         public IActionResult SignUp()

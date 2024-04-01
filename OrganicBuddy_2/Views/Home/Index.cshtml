@@ -1,4 +1,5 @@
-﻿@{
+﻿@* @model List<Pro> *@
+@{
     ViewData["Title"] = "Home Page";
 }
 <br/>
@@ -74,16 +75,34 @@
         <div class="row">
             <div class="col-12">
                 <div class="services d-flex align-items-center justify-content-between">
-                    @foreach (var service in Model)
-                    {
-                        <div class="d-flex align-items-center gap-15">
-                            <img src="@service.Image" alt="services" />
-                            <div>
-                                <h6>@service.Title</h6>
-                                <p class="mb-0">@service.Tagline</p>
-                            </div>
+                    <div class="d-flex align-items-center gap-15">
+                        <img src="~/images/service.png" alt="services" />
+                        <div>
+                            <h6>Free Shipping</h6>
+                            <p class="mb-0">From all Orders over ₹500</p>
                         </div>
-                    }
+                        <img src="~/images/service-02.png" alt="services" />
+                        <div>
+                            <h6>Daily Surprise Offers</h6>
+                            <p class="mb-0">Save upto 25% off</p>
+                        </div>
+                        <img src="~/images/service-03.png" alt="services" />
+                        <div>
+                            <h6>Support 24/7</h6>
+                            <p class="mb-0">Shop with an expert</p>
+                        </div>
+                        <img src="~/images/service-04.png" alt="services" />
+                        <div>
+                            <h6>Affordable Prices</h6>
+                            <p class="mb-0">Get Farm Default Price</p>
+                        </div>
+                        <img src="~/images/service-05.png" alt="services" />
+                        <div>
+                            <h6>Secure Payments</h6>
+                            <p class="mb-0">100% Protected Payment</p>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,151 +192,55 @@
         </div>
         <div class="container-xxl">
             <div class="row">
-                <div class="col-3">
-                    <div class="product-card">
-                        <div class='wishlist-icon position-relative'>
-
-                            <div class='action-bar position-absolute'>
-
-                                <div class='d-flex flex-column'>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/wish.svg' alt='wishlist' />
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/prodcompare.svg' alt='compare' />
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
-                                            <img src='~/images/view.svg' alt='view' />
-                                        </a>
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/add-cart.svg' alt='addcart' />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='product-image'>
-                            <img height="214px" src='~/images/fruit/apple.jpg' alt='product' />
-                        </div>
-                        <div class='product-details'>
-                            <h6 class='name'>Blackberry</h6>
-                            <h5 class='description'>Parsing error: Expected JSX closing tag for</h5>
-                            @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
-                            <p class='price'>₹100</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="product-card">
-                        <div class='wishlist-icon position-relative'>
-
-                            <div class='action-bar position-absolute'>
-
-                                <div class='d-flex flex-column'>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/wish.svg' alt='wishlist' />
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/prodcompare.svg' alt='compare' />
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
-                                            <img src='~/images/view.svg' alt='view' />
-                                        </a>
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/add-cart.svg' alt='addcart' />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='product-image'>
-                            <img height="214px" width="250px" src='~/images/fruit/apricot.png' alt='product' />
-                        </div>
-                        <div class='product-details'>
-                            <h6 class='name'>Apricot</h6>
-                            <h5 class='description'>Parsing error: Expected JSX closing tag for</h5>
-                            @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
-                            <p class='price'>₹100</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="product-card">
-                        <div class='wishlist-icon position-relative'>
-
-                            <div class='action-bar position-absolute'>
-
-                                <div class='d-flex flex-column'>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/wish.svg' alt='wishlist' />
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/prodcompare.svg' alt='compare' />
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
-                                        <img src='~/images/view.svg' alt='view' />
-                                        </a>
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/add-cart.svg' alt='addcart' />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='product-image'>
-                            <img height="214px" width="250px" src='~/images/fruit/avocado.jpg' alt='product' />
-                        </div>
-                        <div class='product-details'>
-                            <h6 class='name'>Avocado</h6>
-                            <h5 class='description'>Parsing error: Expected JSX closing tag for</h5>
-                            @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
-                            <p class='price'>₹100</p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="product-card">
-                        <div class='wishlist-icon position-relative'>
-                            
-                            <div class='action-bar position-absolute'>
-
-                                <div class='d-flex flex-column'>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/wish.svg' alt='wishlist' />
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/prodcompare.svg' alt='compare' />
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
-                                            <img src='~/images/view.svg' alt='view' />
-                                        </a>
-                                    </button>
-                                    <button class='border-0 bg-transparent'>
-                                        <img src='~/images/add-cart.svg' alt='addcart' />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='product-image'>
-                            <img height="214px" src='~/images/fruit/banana.jpg' alt='product' />
-                        </div>
-                        <div class='product-details'>
-                            <h6 class='name'>Banana</h6>
-                            <h5 class='description'>Parsing error: Expected JSX closing tag for</h5>
-                            @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
-                            <p class='price'>₹100</p>
-                        </div>
+                
+                     
                         
-                    </div>
+                            @foreach (var item in Model)
+                            {
+                    <div class="col-3">
+                                        <div class="container-xxl">
+                                            <div class="product-card">
+                                                <div class='wishlist-icon position-relative'>
+
+                                                    <div class='action-bar position-absolute'>
+
+                                                        <div class='d-flex flex-column'>
+                                                            <button class='border-0 bg-transparent'>
+                                                                <img src='~/images/wish.svg' alt='wishlist' />
+                                                            </button>
+                                                            <button class='border-0 bg-transparent'>
+                                                                <img src='~/images/prodcompare.svg' alt='compare' />
+                                                            </button>
+                                                            <button class='border-0 bg-transparent'>
+                                                                <a class="d-flex align-items-center gap-10" asp-area="" asp-controller="Home" asp-action="SingleProduct">
+                                                                    <img src='~/images/view.svg' alt='view' />
+                                                                </a>
+                                                            </button>
+                                                            <button class='border-0 bg-transparent'>
+                                                                <img src='~/images/add-cart.svg' alt='addcart' />
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class='product-image'>
+                                                    <img height="214px" src='~/images/fruit/apple.jpg' alt='product' />
+                                                </div>
+                                                <div class='product-details'>
+                                                    <h6 class='name'>@item.Name</h6>
+                                                    <h5 class='description'>@item.Description</h5>
+                                                    @* Assuming ReactStars is a React component, it cannot be directly converted to Razor. You would need to find an alternative or integrate it with JavaScript. *@
+                                                    <p class='price'>₹@item.Price</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                            }
+                        
+                  
+ 
+                   
                 </div>
+                
                 
             </div>
         </div>
