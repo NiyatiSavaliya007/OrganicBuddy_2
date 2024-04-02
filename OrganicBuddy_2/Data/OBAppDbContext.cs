@@ -21,3 +21,4 @@ namespace OrganicBuddy_2.Data
         public DbSet<User> Users { get; set; }
     }
 }
+//
